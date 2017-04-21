@@ -1,0 +1,182 @@
+\documentclass{beamer}
+
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+\title{Zorn's Lemma}
+
+\author{Vincent Chung}
+
+\institute[University of Hawaii at Manoa]
+{
+  \inst{}%
+  Math 480\\
+  Professor DeMeo}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Intuition}
+
+\subsection{ZFC Set Theory}
+\subsection{Definitions}
+
+\begin{frame}{ZFC Set Theory}
+  \begin{itemize}
+  \item {
+    Zermelo-Frankel Set Theory, with the inclusion of the Axiom of Choice
+  }
+  \item {
+    Foundation of axiomatic set theory and mathematics
+  }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Axiom of Choice}
+    \begin{theorem}
+    The Cartesian product of a collection of non-empty sets is non-empty (Zermelo, 1904)
+    \end{theorem}
+    \begin{itemize}
+        \item {
+        A bit controversial
+        }
+        \item{
+        Sets need to be "well-defined"
+        }
+        \item{
+        Creating sets out of "thin air"}
+    \end{itemize}   
+\end{frame}
+
+\begin{frame}{Some Definitions}
+    \begin{itemize}
+        \item {
+        A partially ordered set is a set that obeys the binary relation $\leq$ over some set $P$, denoted ($P$,$\leq$).
+        }
+        \item{
+        A chain is a set of pairwise comparable elements in $P$}
+    \end{itemize}
+\end{frame}
+
+\section{Zorn's Lemma}
+
+\subsection{Some history}
+\subsection{General sketch of the proof}
+
+\begin{frame}{Zorn's Lemma}
+  \begin{lemma}
+  Let $P$ be a partially ordered set in which every chain has an upper bound. Then, $P$ has at least one maximal element (Kurotowski and Zorn, 1922)
+  \end{lemma}
+\end{frame}
+
+\begin{frame}{Some History on Zorn's Lemma}
+    \begin{itemize}
+        \item First proved by Kazimierz Kurotowski in 1922
+        \item Independently proven by Max Zorn in 1935, proposing Zorn's Lemma as a new axiom to set theory
+        \item Replaced the well-ordering theorem
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{General Overview of Proof}
+    \begin{itemize}
+        \item {Requires the Axiom of Choice}
+    \end{itemize}
+    \begin{itemize}
+        \item {Defining a choice function on a set of ordinals}
+    \end{itemize}
+    \begin{itemize}
+        \item {Using transfinite recursion to derive some contradiction about maximality}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Using Zorn's Lemma}
+  \begin{itemize}
+      \item {Form a collection $\Lambda$ of desired object}
+      \item Given a collection of the desired objects, the union of which will create a chain
+      \item By Zorn's Lemma, we can find that a maximal element exists within this collection
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Zorn's Lemma $\Rightarrow$ Axiom of Choice}
+    \begin{itemize}
+        \item An equivalent form of AC: For any relation $R$, there is a function $F \subseteq R$ with dom F = dom R
+        \item We define a collection of functions $\Lambda$ = $\{$f \subseteq R \mid f \text {is a function}\}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Application of Zorn's Lemma}
+    \begin{itemize}
+        \item Equivalent forms of Zorn's Lemma
+        \begin{itemize}
+            \item Axiom of Choice
+            \item Well-Ordering Principal
+            \item Hausdorff Maximal Principal
+        \end{itemize}
+        \item Zorn's Lemma has applications in other fields of mathematics
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Zorn's Lemma in Mathematics}
+    \begin{itemize}
+        \item Hahn-Banach Theorem (functional analysis)
+        \item Tychonoff's Theorem (topology)
+        \item Every vector space has a Hamel basis (linear algebra)
+        \item Every commutative ring has a proper maximal ideal (abstract algebra)
+    \end{itemize}
+  
+\end{frame}
+
+\section*{Summary}
+
+\begin{frame}{Conclusion}
+  \begin{itemize}
+  \item
+    Accepting the Axiom of Choice results in Zorn's Lemma
+  \item
+    Zorn's Lemma implies Axiom of Choice
+  \item
+    Zorn's Lemma has a lot of applicaitons in various fields of mathematics
+  \end{itemize}
+
+\end{frame}
+
+
+\end{document}
+
+
