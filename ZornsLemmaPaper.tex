@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+	\usepackage[margin=1in]{geometry}
+	\usepackage[utf8]{inputenc}
+	\usepackage[english]{babel}
+	\usepackage{amsthm}
+	
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+
+	
+\begin{document}
+
+\title{Zorn's Lemma}
+\author{Vincent Chung}
+\maketitle
+
+	Prior to the formalization of set theory, mathematics was flawed in the sense that there was no universal language. This may have caused ambiguity from mathematicians across countries or from different educational systems. With ambiguity and vagueness in defining sets, this lead to phenomenons known as paradox. An example would be Russell's Paradox, where $R$ is the set containing all sets that do not contain themselves. The paradox comes from the fact that the definition of $R$ as a set is not well-defined and the result is that $R \in R$ while at the same time, $R \notin R$. This created a necessity for the formalization of set theory and the requirement to create a universal language for mathematics.
+	
+	One of the most commonly used axiomatic system of set theory comes from mathematicians Ernst Zermelo and Abraham Fraenkel. Under their axiomatic system of set theory, we have the empty set axiom, union axiom, extension axiom, regularity axiom, power set axiom, infinity axiom, and replacement axiom. Known as ZF Set Theory, this allowed mathematicians to formalize their work in a concise manner that would prevent resulting paradoxes. In common day mathematics, the standard system of set theory studied is ZFC set theory, which comprises all of the axioms from ZF set theory with the inclusion of the axiom of choice.
+	
+	The statement of the Axiom of Choice is that the Cartesian product of non-empty sets is non-empty. Although this is certainly not the only statement of the Axiom of Choice, it is one of the most notable forms of the axiom. Although we will not go into too much detail about the Axiom of Choice and its history, it is important to note that the inclusion of the Axiom of Choice in our list of axioms results in very interesting consequences.
+	
+	One of those consequences is Zorn's Lemma. Before we move into the statement of Zorn's Lemma, it is necessary to go over some preliminary definitions before we jump into the main subject matter of this paper.
+	
+	\theoremstyle{definition}
+	\begin{definition}{Partially Ordered Set:}
+	A partially ordered set, or a poset, say $P$, is an ordering that obeys the binary relation, $\leq$ and is denoted $(P,\leq)$.
+	\end{definition}
+	
+	As a remark, we should note that a partially ordered set and a totally ordered set both have the properties of transitivity, anti-symmetry, and the reflexive property. The main difference between the two ordered set is that every element can be compared to each other in a totally ordered set, but some elements are pairwise incomparable in a partially ordered set. An example of such is a Hasse Diagram. 
+	
+	In order to understand Zorn's Lemma, we also need the following definition.
+	
+	\theoremstyle{definition}
+	\begin{definition}{Chain:} A chain is a set of pairwise comparable elements in a partially ordered set.
+	\end{definition}
+	
+	As a remark, it is also good to know that one can pairwise compare any element within a chain under the binary relation, $\leq$, but it does not follow that one can compare elements from one chain to elements from another chain, unless they share a common element. If the latter is the case, then this means that the element is being compared to itself, and it is the same element (reflexive).
+	
+	Now, we will state Zorn's Lemma.
+	
+	\theoremstyle{definition}
+	\begin{lemma}
+	Zorn's Lemma: Let $P$ be a partially ordered set in which every chain has an upper bound. Then, P has at least one maximal element.
+	\end{lemma}	
+	
+	This lemma is also known at the Kurotowski-Zorn Lemma. In 1922, Kazimierz Kurotowski proved a weaker version of this lemma first while he was working on a problem that dealt with maximality. It wasn't until 1935 that Max Zorn independently proved the lemma that we know today. Zorn proposed this lemma as a new axiom to set theory and it replaced the well-ordering theorem.
+	
+	A neat property about Zorn's lemma is that it is an equivalent statement to the Axiom of Choice. Zorn's Lemma comes directly from ZFC set theory and if we have the axiom of choice within our arsenal, we are guaranteed Zorn's Lemma. Because they are equivalent statements, Zorn's Lemma can be used to prove one of the equivalent forms of the Axiom of Choice, namely, the statement that "For any relation $R$, there is a function $F \subseteq R$ with the $dom F = dom R$." We will show how this works below.
+	
+	\begin{proof}
+	We define a collection of functions, $\Lambda$ = $\{f \subseteq R \mid f$ is a function$\}$. Then, we consider any chain, $\beta$, which is a subset of $\Lambda$. Consider the union, $\cup \beta$. It is necessary that we verify $\cup \beta$ is closed under the operation of unions (so that $\cup \beta$ is still a chain), and that the union of all chains is still a function (so that $\cup \beta \in \Lambda$). We will first show that $\beta$ is closed under unions. Consider any chain $\beta \subseteq \Lambda$. Since every member of $\beta subseteq R$, then $\cup \beta$, the union of all elements in $R$ will still be in $R$. Namely, the $\cup \beta \subseteq R$. Hence, $\cup \beta$ is closed under union of chains. It is also necessary to show that $\cup \beta$ is a function. If $<x,y> , <x,z> \in \cup \beta$, then we say $<x,y> \in G \in \beta$ and similarly, $<x,z> \in H \in \beta$, where $G, H$ are functions in $\Lambda$. Then, under the binary relation, either $G \subseteq H$ or $H \subseteq G$. In either case, $<x,z>$ and $<x,y>$ belong to a single function so $x = y$. This implies that $\cup \beta \in \Lambda$. Hence, $\cup \beta$ is a function. Now, by the assumption of Zorn's Lemma, we can say that there exists some maximal element in $\Lambda$, say $F$. We claim $dom F = dom R$ and we will show this by contradiction. Suppose not. Then, we take and $x \in dom R$. Since $x \in R$, we can say there exists and element $y$ such that $xRy$, namely, there is a relation between $x$ and $y$. Define a new function, $F' = F\cup{<x,y>}$. Then, $F' \in \Lambda$. But this contradicts the maximality of $F$, hence, $dom F = dom R$ and we have the Axiom of Choice.
+	\end{proof}
+	
+	As a consequence of having Zorn's Lemma at our disposal, it is nice to say that there are a lot of theorems that can be proven with the use of Zorn's. Zorn's Lemma and the Axiom of Choice have been involved in a various fields of mathematics, such as functional analysis, topology, linear algebra, and abstract algebra. Tychonoff's Theorem, from topology which states that the product of two compact topological spaces is compact, uses Zorn's Lemma as a proof. Another well known theorem that applies Zorn's Lemma is the theorem that states that ever vector spaces has a basis.
+	
+	It is also important to note that there are just as much equivalent statements of Zorn's Lemma. In fact, with the assumption of the Axiom of Choice, we have Zorn's Lemma, and we have just shown above that Zorn's Lemma implies the Axiom of Choice. Hence, it suffices to say that they are equivalent statements. Moreover, Zorn's Lemma is also implies the Hausdorff Maximal Principal and the Well-Ordering Theorem.
+	
+	In conclusion, we have seen quite a few application of Zorn's Lemma in many fields of mathematics. This could not have been done without the assumption of the Axiom of Choice, and we have seen some of the benefits that arise due to the addition of Choice into ZF set theory.
+	
+	
+	
+	
+\end{document}
